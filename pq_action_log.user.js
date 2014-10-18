@@ -81,8 +81,8 @@
     } else {
       pfx = '??';
     }
-    when = when.toISOString().match(/^([0-9\-]+)T([0-9:]+)/);
-    // console.log([when[1], when[2], pfx, msg]);
+    when = when.toTimeString().split(/\s/)[0] + ', ' + when.toDateString();
+    // console.log([when, pfx, msg]);
     logLn = dest.lastChild;
     if (logLn) {
       if (jq(logLn.firstChild).text() !== pfx) { logLn = null; }
@@ -93,8 +93,7 @@
       logLn = jq('<p><b></b> </p>').appendTo(dest)[0];
       jq(logLn.firstChild).text(pfx);
     }
-    jq('<span></span>').text(msg).appendTo(logLn)[0].title = when[1] +
-      ' ' + when[2];
+    jq('<span></span>').text(msg).appendTo(logLn)[0].title = when;
     logPane.autoScroll();
   };
 
