@@ -19,6 +19,7 @@
 // ==UserScript==
 // @name        ProgressQuest Action Log
 // @namespace   greasemonkey.web-enhance.pimpmybyte.de
+// @description
 // @include     http://www.progressquest.com/play/main.html
 // @include     http://www.progressquest.com/play/main.html#*
 // @grant       none
